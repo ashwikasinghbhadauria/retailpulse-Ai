@@ -1,0 +1,172 @@
+// ===============================================================================
+// RETAILPULSE AI — PRODUCTION DAX MEASURES LIBRARY (30+ Measures)
+// Model: Star Schema (Fact: fact_sales, Dims: dim_customers, dim_date, dim_products)
+// ===============================================================================
+
+// -------------------------------------------------------------------------------
+// 1. CORE REVENUE & FINANCIAL MEASURES
+// -------------------------------------------------------------------------------
+
+[Total Revenue] = 
+SUM(fact_sales[revenue])
+
+[Total COGS] = 
+SUM(fact_sales[cogs])
+
+[Total Gross Profit] = 
+[Total Revenue] - [Total COGS]
+
+[Gross Profit Margin %] = 
+DIVIDE([Total Gross Profit], [Total Revenue], 0)
+
+[Total Orders] = 
+DISTINCTCOUNT(fact_sales[order_id])
+
+[Total Units Sold] = 
+SUM(fact_sales[quantity])
+
+[Average Order Value] = 
+DIVIDE([Total Revenue], [Total Orders], 0)
+
+[Average Discount %] = 
+AVERAGE(fact_sales[discount]) * 100
+
+[Total Discounts Granted ($)] = 
+SUMX(
+    fact_sales,
+    (fact_sales[unit_price] * fact_sales[quantity]) * fact_sales[discount]
+)
+
+// -------------------------------------------------------------------------------
+// 2. TIME INTELLIGENCE & MOM / YOY GROWTH
+// -------------------------------------------------------------------------------
+
+[Revenue YTD] = 
+TOTALYTD([Total Revenue], dim_date[Date])
+
+[Profit YTD] = 
+TOTALYTD([Total Gross Profit], dim_date[Date])
+
+[Revenue Prior Month (PM)] = 
+CALCULATE(
+    [Total Revenue],
+    DATEADD(dim_date[Date], -1, MONTH)
+)
+
+[MoM Revenue Growth ($)] = 
+[Total Revenue] - [Revenue Prior Month (PM)]
+
+[MoM Revenue Growth %] = 
+DIVIDE([MoM Revenue Growth ($)], [Revenue Prior Month (PM)], 0)
+
+[Revenue Prior Year (PY)] = 
+CALCULATE(
+    [Total Revenue],
+    SAMEPERIODLASTYEAR(dim_date[Date])
+)
+
+[YoY Revenue Growth %] = 
+DIVIDE([Total Revenue] - [Revenue Prior Year (PY)], [Revenue Prior Year (PY)], 0)
+
+[Rolling 3M Revenue] = 
+CALCULATE(
+    [Total Revenue],
+    DATESINPERIOD(dim_date[Date], MAX(dim_date[Date]), -3, MONTH)
+)
+
+[Rolling 12M Revenue] = 
+CALCULATE(
+    [Total Revenue],
+    DATESINPERIOD(dim_date[Date], MAX(dim_date[Date]), -12, MONTH)
+)
+
+// -------------------------------------------------------------------------------
+// 3. CUSTOMER INTELLIGENCE & RFM MEASURES
+// -------------------------------------------------------------------------------
+
+[Total Distinct Customers] = 
+DISTINCTCOUNT(fact_sales[customer_id])
+
+[Revenue per Customer] = 
+DIVIDE([Total Revenue], [Total Distinct Customers], 0)
+
+[Average Orders per Customer] = 
+DIVIDE([Total Orders], [Total Distinct Customers], 0)
+
+[Repeat Customer Count] = 
+CALCULATE(
+    [Total Distinct Customers],
+    FILTER(
+        VALUES(fact_sales[customer_id]),
+        CALCULATE(DISTINCTCOUNT(fact_sales[order_id])) > 1
+    )
+)
+
+[Repeat Customer Rate %] = 
+DIVIDE([Repeat Customer Count], [Total Distinct Customers], 0)
+
+[High Value Champions Count] = 
+CALCULATE(
+    DISTINCTCOUNT(dim_customers[customer_id]),
+    dim_customers[heuristic_segment] = "High Value / Champion"
+)
+
+[High Value Champions Revenue] = 
+CALCULATE(
+    [Total Revenue],
+    dim_customers[heuristic_segment] = "High Value / Champion"
+)
+
+[At Risk Customers Count] = 
+CALCULATE(
+    DISTINCTCOUNT(dim_customers[customer_id]),
+    dim_customers[churn_risk_band] = "High Risk (>70%)"
+)
+
+[At Risk Revenue Exposure ($)] = 
+CALCULATE(
+    SUM(dim_customers[monetary]),
+    dim_customers[churn_risk_band] = "High Risk (>70%)"
+)
+
+// -------------------------------------------------------------------------------
+// 4. PRODUCT & CATEGORY ASSORTMENT
+// -------------------------------------------------------------------------------
+
+[Total Distinct SKUs Sold] = 
+DISTINCTCOUNT(fact_sales[product_id])
+
+[Category Revenue Share %] = 
+DIVIDE(
+    [Total Revenue],
+    CALCULATE([Total Revenue], ALL(fact_sales[category_name])),
+    0
+)
+
+[Top Product by Revenue] = 
+TOPN(
+    1,
+    VALUES(fact_sales[product_name]),
+    [Total Revenue],
+    DESC
+)
+
+[Product Gross Margin Quadrant] = 
+IF(
+    [Gross Profit Margin %] >= 0.50,
+    "High Margin Star",
+    IF([Gross Profit Margin %] >= 0.35, "Core Assortment", "Margin Dilution / Review")
+)
+
+// -------------------------------------------------------------------------------
+// 5. PREDICTIVE & TARGET TRACKING
+// -------------------------------------------------------------------------------
+
+[Target Monthly Revenue] = 
+[Revenue Prior Year (PY)] * 1.10
+
+[Sales vs Target Variance %] = 
+DIVIDE([Total Revenue] - [Target Monthly Revenue], [Target Monthly Revenue], 0)
+
+[Forecasted Run-Rate (Daily)] = 
+DIVIDE([Total Revenue], DAY(MAX(dim_date[Date])), 0) * 30
