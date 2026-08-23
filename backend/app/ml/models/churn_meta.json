@@ -1,0 +1,269 @@
+{
+  "champion_model": "Random Forest",
+  "champion_roc_auc": 0.7842,
+  "business_definition": "Customers with no purchase activity in the past 180 days with >= 60 days customer tenure.",
+  "total_analyzed_customers": 12000,
+  "actual_churn_rate_pct": 54.62,
+  "model_comparisons": [
+    {
+      "model_name": "Logistic Regression",
+      "accuracy": 0.7107,
+      "precision": 0.7095,
+      "recall": 0.7961,
+      "f1_score": 0.7503,
+      "roc_auc": 0.7805,
+      "confusion_matrix": {
+        "true_negatives": 828,
+        "false_positives": 534,
+        "false_negatives": 334,
+        "true_positives": 1304
+      }
+    },
+    {
+      "model_name": "Random Forest",
+      "accuracy": 0.7283,
+      "precision": 0.7111,
+      "recall": 0.8462,
+      "f1_score": 0.7728,
+      "roc_auc": 0.7842,
+      "confusion_matrix": {
+        "true_negatives": 799,
+        "false_positives": 563,
+        "false_negatives": 252,
+        "true_positives": 1386
+      }
+    },
+    {
+      "model_name": "Gradient Boosting",
+      "accuracy": 0.7307,
+      "precision": 0.7157,
+      "recall": 0.8407,
+      "f1_score": 0.7732,
+      "roc_auc": 0.7838,
+      "confusion_matrix": {
+        "true_negatives": 815,
+        "false_positives": 547,
+        "false_negatives": 261,
+        "true_positives": 1377
+      }
+    }
+  ],
+  "feature_importances": [
+    {
+      "feature": "frequency",
+      "importance": 0.3019
+    },
+    {
+      "feature": "purchase_cadence_days",
+      "importance": 0.3005
+    },
+    {
+      "feature": "monetary",
+      "importance": 0.1311
+    },
+    {
+      "feature": "tenure_days",
+      "importance": 0.1129
+    },
+    {
+      "feature": "category_diversity",
+      "importance": 0.0515
+    },
+    {
+      "feature": "avg_discount_rate",
+      "importance": 0.0362
+    },
+    {
+      "feature": "average_order_value",
+      "importance": 0.0343
+    },
+    {
+      "feature": "profit_per_order",
+      "importance": 0.0317
+    }
+  ],
+  "risk_band_distribution": [
+    {
+      "risk_band": "Medium Risk (30-70%)",
+      "customer_count": 5637,
+      "share_pct": 46.98
+    },
+    {
+      "risk_band": "High Risk (>70%)",
+      "customer_count": 3831,
+      "share_pct": 31.92
+    },
+    {
+      "risk_band": "Low Risk (<30%)",
+      "customer_count": 2532,
+      "share_pct": 21.1
+    }
+  ],
+  "top_at_risk_vip_customers": [
+    {
+      "customer_id": "CUST-00055",
+      "customer_name": "Joseph Mendoza",
+      "region": "Central",
+      "segment": "Home Office",
+      "total_spend": 5091.65,
+      "total_orders": 5,
+      "recency_days": 1049,
+      "churn_probability": 0.7007,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-06772",
+      "customer_name": "Melissa Peterson",
+      "region": "West",
+      "segment": "Consumer",
+      "total_spend": 4708.94,
+      "total_orders": 4,
+      "recency_days": 994,
+      "churn_probability": 0.7777,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-04724",
+      "customer_name": "Ryan Evans",
+      "region": "East",
+      "segment": "Home Office",
+      "total_spend": 4256.67,
+      "total_orders": 2,
+      "recency_days": 806,
+      "churn_probability": 0.8166,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-07497",
+      "customer_name": "Janet Brooks",
+      "region": "Central",
+      "segment": "Consumer",
+      "total_spend": 4146.33,
+      "total_orders": 4,
+      "recency_days": 457,
+      "churn_probability": 0.7289,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-10337",
+      "customer_name": "Catherine Mendoza",
+      "region": "East",
+      "segment": "Consumer",
+      "total_spend": 4124.28,
+      "total_orders": 3,
+      "recency_days": 697,
+      "churn_probability": 0.7738,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-10235",
+      "customer_name": "Maria Mitchell",
+      "region": "North",
+      "segment": "Corporate",
+      "total_spend": 4072.4,
+      "total_orders": 4,
+      "recency_days": 336,
+      "churn_probability": 0.7411,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-10831",
+      "customer_name": "Helen Peterson",
+      "region": "West",
+      "segment": "Corporate",
+      "total_spend": 3973.59,
+      "total_orders": 4,
+      "recency_days": 190,
+      "churn_probability": 0.765,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-07734",
+      "customer_name": "Mark Smith",
+      "region": "South",
+      "segment": "Consumer",
+      "total_spend": 3970.77,
+      "total_orders": 4,
+      "recency_days": 435,
+      "churn_probability": 0.7108,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-11198",
+      "customer_name": "Catherine Richardson",
+      "region": "South",
+      "segment": "Corporate",
+      "total_spend": 3915.6,
+      "total_orders": 4,
+      "recency_days": 493,
+      "churn_probability": 0.7072,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-04933",
+      "customer_name": "Amy Clark",
+      "region": "Central",
+      "segment": "Corporate",
+      "total_spend": 3816.83,
+      "total_orders": 4,
+      "recency_days": 311,
+      "churn_probability": 0.7309,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-02815",
+      "customer_name": "Betty Ward",
+      "region": "East",
+      "segment": "Consumer",
+      "total_spend": 3774.91,
+      "total_orders": 2,
+      "recency_days": 321,
+      "churn_probability": 0.8039,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-07500",
+      "customer_name": "Jeffrey Morgan",
+      "region": "Central",
+      "segment": "Consumer",
+      "total_spend": 3667.38,
+      "total_orders": 2,
+      "recency_days": 566,
+      "churn_probability": 0.8189,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-04921",
+      "customer_name": "Daniel Kim",
+      "region": "West",
+      "segment": "Consumer",
+      "total_spend": 3620.33,
+      "total_orders": 4,
+      "recency_days": 546,
+      "churn_probability": 0.7387,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-11831",
+      "customer_name": "Carol Carter",
+      "region": "West",
+      "segment": "Consumer",
+      "total_spend": 3616.88,
+      "total_orders": 3,
+      "recency_days": 637,
+      "churn_probability": 0.8093,
+      "risk_band": "High Risk"
+    },
+    {
+      "customer_id": "CUST-04515",
+      "customer_name": "John Anderson",
+      "region": "North",
+      "segment": "Consumer",
+      "total_spend": 3599.96,
+      "total_orders": 1,
+      "recency_days": 552,
+      "churn_probability": 0.7794,
+      "risk_band": "High Risk"
+    }
+  ]
+}

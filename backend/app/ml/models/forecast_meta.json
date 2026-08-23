@@ -1,0 +1,661 @@
+{
+  "model_architecture": "Gradient Boosting Auto-Regressive Regressor with Cyclical Month Seasonality",
+  "validation_metrics": {
+    "baseline_mape": 22.49,
+    "champion_mape": 25.99,
+    "champion_mae": 98055.65,
+    "champion_rmse": 152758.6
+  },
+  "forecast_horizon_months": 6,
+  "forecast_timeline": [
+    {
+      "year_month": "2022-01",
+      "actual_revenue": 194.97,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-02",
+      "actual_revenue": 2376.4,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-03",
+      "actual_revenue": 5279.52,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-04",
+      "actual_revenue": 18671.87,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-05",
+      "actual_revenue": 25399.19,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-06",
+      "actual_revenue": 28723.7,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-07",
+      "actual_revenue": 34204.15,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-08",
+      "actual_revenue": 46771.64,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-09",
+      "actual_revenue": 55890.61,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-10",
+      "actual_revenue": 78543.47,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-11",
+      "actual_revenue": 64650.89,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2022-12",
+      "actual_revenue": 85975.17,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-01",
+      "actual_revenue": 132287.37,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-02",
+      "actual_revenue": 119358.19,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-03",
+      "actual_revenue": 151763.98,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-04",
+      "actual_revenue": 145305.53,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-05",
+      "actual_revenue": 168145.28,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-06",
+      "actual_revenue": 170833.09,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-07",
+      "actual_revenue": 183184.51,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-08",
+      "actual_revenue": 196363.36,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-09",
+      "actual_revenue": 200658.86,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-10",
+      "actual_revenue": 218114.0,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-11",
+      "actual_revenue": 220174.46,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2023-12",
+      "actual_revenue": 233600.06,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-01",
+      "actual_revenue": 260330.34,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-02",
+      "actual_revenue": 283123.08,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-03",
+      "actual_revenue": 340169.51,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-04",
+      "actual_revenue": 340435.12,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-05",
+      "actual_revenue": 378961.88,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-06",
+      "actual_revenue": 370345.58,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-07",
+      "actual_revenue": 433512.89,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-08",
+      "actual_revenue": 436370.23,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-09",
+      "actual_revenue": 407905.62,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-10",
+      "actual_revenue": 454368.21,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-11",
+      "actual_revenue": 399696.13,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2024-12",
+      "actual_revenue": 446756.66,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-01",
+      "actual_revenue": 537319.49,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-02",
+      "actual_revenue": 505010.39,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-03",
+      "actual_revenue": 615122.47,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-04",
+      "actual_revenue": 568054.45,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-05",
+      "actual_revenue": 608314.97,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-06",
+      "actual_revenue": 591428.98,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-07",
+      "actual_revenue": 583791.74,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-08",
+      "actual_revenue": 603795.64,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-09",
+      "actual_revenue": 633196.59,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-10",
+      "actual_revenue": 634385.6,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-11",
+      "actual_revenue": 547443.0,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2025-12",
+      "actual_revenue": 566461.74,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-01",
+      "actual_revenue": 644680.94,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-02",
+      "actual_revenue": 567513.67,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-03",
+      "actual_revenue": 615641.76,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-04",
+      "actual_revenue": 603662.72,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-05",
+      "actual_revenue": 677030.27,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-06",
+      "actual_revenue": 612665.18,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-07",
+      "actual_revenue": 614893.57,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-08",
+      "actual_revenue": 298834.16,
+      "predicted_revenue": null,
+      "lower_bound_90ci": null,
+      "upper_bound_90ci": null,
+      "is_forecast": false
+    },
+    {
+      "year_month": "2026-09",
+      "actual_revenue": null,
+      "predicted_revenue": 600183.25,
+      "lower_bound_90ci": 544157.28,
+      "upper_bound_90ci": 656209.22,
+      "is_forecast": true
+    },
+    {
+      "year_month": "2026-10",
+      "actual_revenue": null,
+      "predicted_revenue": 567095.26,
+      "lower_bound_90ci": 503761.55,
+      "upper_bound_90ci": 630428.96,
+      "is_forecast": true
+    },
+    {
+      "year_month": "2026-11",
+      "actual_revenue": null,
+      "predicted_revenue": 765705.52,
+      "lower_bound_90ci": 695064.08,
+      "upper_bound_90ci": 836346.96,
+      "is_forecast": true
+    },
+    {
+      "year_month": "2026-12",
+      "actual_revenue": null,
+      "predicted_revenue": 880289.93,
+      "lower_bound_90ci": 802340.75,
+      "upper_bound_90ci": 958239.1,
+      "is_forecast": true
+    },
+    {
+      "year_month": "2027-01",
+      "actual_revenue": null,
+      "predicted_revenue": 800577.92,
+      "lower_bound_90ci": 715321.01,
+      "upper_bound_90ci": 885834.83,
+      "is_forecast": true
+    },
+    {
+      "year_month": "2027-02",
+      "actual_revenue": null,
+      "predicted_revenue": 864125.98,
+      "lower_bound_90ci": 771561.34,
+      "upper_bound_90ci": 956690.62,
+      "is_forecast": true
+    }
+  ],
+  "next_quarter_projected_revenue": 1932984.03,
+  "category_forecasts": [
+    {
+      "category_name": "Apparel",
+      "recent_monthly_avg": 62995.88,
+      "projected_monthly_trend": [
+        {
+          "year_month": "2026-09",
+          "projected_revenue": 65200.73
+        },
+        {
+          "year_month": "2026-10",
+          "projected_revenue": 67482.76
+        },
+        {
+          "year_month": "2026-11",
+          "projected_revenue": 90798.05
+        },
+        {
+          "year_month": "2026-12",
+          "projected_revenue": 93975.98
+        },
+        {
+          "year_month": "2027-01",
+          "projected_revenue": 74819.34
+        },
+        {
+          "year_month": "2027-02",
+          "projected_revenue": 77438.01
+        }
+      ]
+    },
+    {
+      "category_name": "Electronics",
+      "recent_monthly_avg": 144334.94,
+      "projected_monthly_trend": [
+        {
+          "year_month": "2026-09",
+          "projected_revenue": 149386.66
+        },
+        {
+          "year_month": "2026-10",
+          "projected_revenue": 154615.19
+        },
+        {
+          "year_month": "2026-11",
+          "projected_revenue": 208034.74
+        },
+        {
+          "year_month": "2026-12",
+          "projected_revenue": 215315.96
+        },
+        {
+          "year_month": "2027-01",
+          "projected_revenue": 171424.63
+        },
+        {
+          "year_month": "2027-02",
+          "projected_revenue": 177424.49
+        }
+      ]
+    },
+    {
+      "category_name": "Furniture",
+      "recent_monthly_avg": 240749.2,
+      "projected_monthly_trend": [
+        {
+          "year_month": "2026-09",
+          "projected_revenue": 249175.42
+        },
+        {
+          "year_month": "2026-10",
+          "projected_revenue": 257896.56
+        },
+        {
+          "year_month": "2026-11",
+          "projected_revenue": 346999.83
+        },
+        {
+          "year_month": "2026-12",
+          "projected_revenue": 359144.82
+        },
+        {
+          "year_month": "2027-01",
+          "projected_revenue": 285934.53
+        },
+        {
+          "year_month": "2027-02",
+          "projected_revenue": 295942.24
+        }
+      ]
+    },
+    {
+      "category_name": "Home & Kitchen",
+      "recent_monthly_avg": 74620.81,
+      "projected_monthly_trend": [
+        {
+          "year_month": "2026-09",
+          "projected_revenue": 77232.54
+        },
+        {
+          "year_month": "2026-10",
+          "projected_revenue": 79935.68
+        },
+        {
+          "year_month": "2026-11",
+          "projected_revenue": 107553.46
+        },
+        {
+          "year_month": "2026-12",
+          "projected_revenue": 111317.83
+        },
+        {
+          "year_month": "2027-01",
+          "projected_revenue": 88626.12
+        },
+        {
+          "year_month": "2027-02",
+          "projected_revenue": 91728.03
+        }
+      ]
+    },
+    {
+      "category_name": "Office Supplies",
+      "recent_monthly_avg": 47753.79,
+      "projected_monthly_trend": [
+        {
+          "year_month": "2026-09",
+          "projected_revenue": 49425.17
+        },
+        {
+          "year_month": "2026-10",
+          "projected_revenue": 51155.05
+        },
+        {
+          "year_month": "2026-11",
+          "projected_revenue": 68829.12
+        },
+        {
+          "year_month": "2026-12",
+          "projected_revenue": 71238.14
+        },
+        {
+          "year_month": "2027-01",
+          "projected_revenue": 56716.52
+        },
+        {
+          "year_month": "2027-02",
+          "projected_revenue": 58701.59
+        }
+      ]
+    }
+  ]
+}

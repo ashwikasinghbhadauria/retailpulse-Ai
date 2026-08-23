@@ -1,0 +1,64 @@
+{
+  "optimal_k": 4,
+  "best_silhouette_score": 0.3302,
+  "all_evaluated_scores": {
+    "3": 0.3189,
+    "4": 0.3302,
+    "5": 0.2948
+  },
+  "total_segmented_customers": 12000,
+  "segments": [
+    {
+      "cluster_id": 0,
+      "segment_name": "Champions / High Value",
+      "customer_count": 2719,
+      "customer_share_pct": 22.66,
+      "total_revenue": 9148569.61,
+      "total_profit": 4665581.51,
+      "revenue_share_pct": 48.75,
+      "avg_recency_days": 74.5,
+      "avg_frequency": 9.8,
+      "avg_monetary": 3364.68,
+      "avg_order_value": 354.84
+    },
+    {
+      "cluster_id": 3,
+      "segment_name": "At Risk / Inactive",
+      "customer_count": 4753,
+      "customer_share_pct": 39.61,
+      "total_revenue": 6925981.27,
+      "total_profit": 3517164.17,
+      "revenue_share_pct": 36.9,
+      "avg_recency_days": 389.6,
+      "avg_frequency": 4.0,
+      "avg_monetary": 1457.18,
+      "avg_order_value": 395.02
+    },
+    {
+      "cluster_id": 2,
+      "segment_name": "Potential Growth / Recent",
+      "customer_count": 1968,
+      "customer_share_pct": 16.4,
+      "total_revenue": 1917472.23,
+      "total_profit": 1003816.53,
+      "revenue_share_pct": 10.22,
+      "avg_recency_days": 58.3,
+      "avg_frequency": 3.5,
+      "avg_monetary": 974.33,
+      "avg_order_value": 300.44
+    },
+    {
+      "cluster_id": 1,
+      "segment_name": "Occasional Buyers",
+      "customer_count": 2560,
+      "customer_share_pct": 21.33,
+      "total_revenue": 775669.74,
+      "total_profit": 428185.54,
+      "revenue_share_pct": 4.13,
+      "avg_recency_days": 496.5,
+      "avg_frequency": 1.8,
+      "avg_monetary": 303.0,
+      "avg_order_value": 195.85
+    }
+  ]
+}

@@ -25,31 +25,35 @@ Tracking status across all 16 implementation phases.
   - Time-series aggregations, MoM growth, Window functions
   - RFM, CLV, regional and category profitability queries
 
-- [~] **Phase 4: Python Analytics & Data Engineering Pipeline**
-  - Data loading, validation, and missing-value handling
-  - Core descriptive & diagnostic KPI engine
-  - Margin erosion & discount diagnostics
+- [x] **Phase 4: Python Analytics & Data Engineering Pipeline**
+  - Data loading, validation, and missing-value handling (`DataLoader`)
+  - Core descriptive & diagnostic KPI engine (`get_executive_summary`, `get_sales_trends`, `get_regional_breakdown`, `get_category_breakdown`, `get_top_products`)
+  - Anomaly & margin erosion diagnostics (`run_diagnostics`)
 
-- [ ] **Phase 5: Customer Segmentation (RFM + K-Means)**
-  - RFM calculation & standardization
-  - K-Means clustering with Silhouette Score evaluation
-  - Automated cluster interpretation & business labeling
+- [x] **Phase 5: Customer Segmentation (RFM + K-Means)**
+  - RFM calculation & standardization with log scaling
+  - K-Means clustering with Silhouette Score evaluation (k=3..5)
+  - Automated cluster interpretation & business labeling (Champions, At Risk, Potential Growth, Occasional)
+  - Saved model and metadata artifact (`kmeans_rfm.joblib`, `segmentation_meta.json`)
 
-- [ ] **Phase 6: Customer Churn Prediction Engine**
-  - Churn business definition and feature engineering
+- [x] **Phase 6: Customer Churn Prediction Engine**
+  - Churn business definition (180+ days inactivity with >= 60d tenure) and feature engineering
   - Model comparison (Logistic Regression, Random Forest, Gradient Boosting)
-  - Probability calibration, risk bands (Low/Medium/High), and model persistence
+  - Evaluation on ROC-AUC, Recall, Precision, F1-Score, Confusion Matrix
+  - Calibrated probability prediction and risk bands (Low/Medium/High Risk)
+  - Saved champion model artifact (`churn_champion.joblib`, `churn_meta.json`)
 
-- [ ] **Phase 7: Demand Forecasting Engine**
-  - Historical time-series decomposition
-  - Time-series regression & trend/seasonality modeling
-  - Multi-step horizon forecast with confidence intervals & error metrics
+- [x] **Phase 7: Demand Forecasting Engine**
+  - Time-series lag engineering, rolling averages, cyclical month seasonality
+  - Multi-step autoregressive 6-month horizon forecasting with 90% confidence intervals
+  - Baseline vs Gradient Boosting regressor evaluation (MAPE, MAE, RMSE)
+  - Category-level demand trajectories and saved model artifact (`forecast_meta.json`)
 
-- [ ] **Phase 8: Prescriptive Business Recommendation Engine**
-  - Grounded deterministic rule-based business logic
-  - Actionable recommendations with rationale and priority scoring
+- [x] **Phase 8: Prescriptive Business Recommendation Engine**
+  - Grounded deterministic rule-based business logic (`generate_business_recommendations`)
+  - Actionable recommendations with rationale, priority scoring, expected financial impact, and effort ratings
 
-- [ ] **Phase 9: FastAPI Backend Architecture**
+- [~] **Phase 9: FastAPI Backend Architecture**
   - REST API routes (`/dashboard`, `/sales`, `/products`, `/customers`, `/forecast`, `/recommendations`)
   - Pydantic models, CORS, error handling, structured responses
 
