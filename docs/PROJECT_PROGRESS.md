@@ -53,16 +53,17 @@ Tracking status across all 16 implementation phases.
   - Grounded deterministic rule-based business logic (`generate_business_recommendations`)
   - Actionable recommendations with rationale, priority scoring, expected financial impact, and effort ratings
 
-- [~] **Phase 9: FastAPI Backend Architecture**
-  - REST API routes (`/dashboard`, `/sales`, `/products`, `/customers`, `/forecast`, `/recommendations`)
-  - Pydantic models, CORS, error handling, structured responses
+- [x] **Phase 9: FastAPI Backend Architecture**
+  - REST API routes (`/dashboard/summary`, `/sales/trends`, `/sales/regions`, `/sales/categories`, `/products/top`, `/products/underperforming`, `/customers/segments`, `/customers/churn`, `/forecast`, `/recommendations`, `/diagnostics`)
+  - Pydantic v2 schemas, CORS middleware, global error handlers, OpenAPI/Swagger docs
+  - 100% passed automated test suite (`backend/tests/test_api.py`)
 
-- [ ] **Phase 10: Generative AI Business Analyst**
-  - Controlled tool-calling architecture (`get_executive_metrics`, `get_sales_trend`, etc.)
-  - Structured output (Answer, Evidence, Interpretation, Recommendation, Caveat)
-  - Safe fallback execution for missing API keys
+- [x] **Phase 10: Generative AI Business Analyst**
+  - Controlled tool-calling architecture (`get_executive_metrics`, `get_sales_trend`, `get_category_profit`, `get_region_performance`, `get_customer_segments`, `get_top_products`, `get_churn_summary`, `get_forecast`, `get_prescriptive_recommendations`)
+  - Guaranteed 5-part structured response (Answer, Evidence, Interpretation, Recommendation, Caveat)
+  - Zero-arbitrary SQL security & deterministic analytical synthesis fallback
 
-- [ ] **Phase 11: Enterprise React Frontend Application**
+- [~] **Phase 11: Enterprise React Frontend Application**
   - React 18 + TypeScript + Vite + Tailwind CSS + Recharts + Lucide icons
   - 6 interactive views (Executive, Sales, Customers, Products, ML & Forecasting, AI Analyst)
   - Responsive layouts, filters, KPI cards, interactive charts
