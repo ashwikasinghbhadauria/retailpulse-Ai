@@ -5,7 +5,7 @@ Serves the React frontend as static files AND the REST API on a single port.
 
 import os
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -106,11 +106,10 @@ if os.path.exists(FRONTEND_DIST):
         Catch-all: serve an existing static file if it exists,
         otherwise fall back to index.html so React Router handles the path.
         """
-        # Don't catch /docs, /redoc, /openapi.json
-        for reserved in ("docs", "redoc", "openapi.json", "api"):
-            if full_path.startswith(reserved):
-                return JSONResponse(status_code=404, content={"detail": "Not found"})
-
+        # Reserved paths for FastAPI documentation and API routes
+        reserved = ("api", "docs", "redoc", "openapi.json", "swagger.json")
+        if any(full_path.startswith(r) for r in reserved):
+            raise HTTPException(status_code=404)
         target = os.path.join(FRONTEND_DIST, full_path)
         if os.path.exists(target) and os.path.isfile(target):
             return FileResponse(target)

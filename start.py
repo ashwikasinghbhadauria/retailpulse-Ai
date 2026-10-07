@@ -41,17 +41,17 @@ def find_npm() -> str:
 def build_frontend(force: bool = False) -> bool:
     """Build the React app with Vite. Returns True on success."""
     if not force and os.path.exists(FRONTEND_DIST):
-        print("✅  React build already exists at frontend/dist — skipping build.")
+        print("[OK]  React build already exists at frontend/dist — skipping build.")
         print("    (Use --rebuild to force a fresh build)\n")
         return True
 
     npm = find_npm()
     if not npm:
-        print("⚠️  npm not found. Cannot build frontend.")
+        print("[WARN]  npm not found. Cannot build frontend.")
         print("   Install Node.js or add it to PATH, then run: cd frontend && npm run build")
         return False
 
-    print("📦  Installing frontend dependencies...")
+    print("[INFO]  Installing frontend dependencies...")
     env = os.environ.copy()
     env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0"  # handles corporate proxy / self-signed certs
 
@@ -66,7 +66,7 @@ def build_frontend(force: bool = False) -> bool:
         print(f"❌  npm install failed:\n{result.stderr}")
         return False
 
-    print("🔨  Building React app (Vite production build)...")
+    print("[INFO]  Building React app (Vite production build)...")
     result = subprocess.run(
         [npm, "run", "build"],
         cwd=FRONTEND_DIR,
@@ -78,7 +78,7 @@ def build_frontend(force: bool = False) -> bool:
         print(f"❌  Frontend build failed:\n{result.stderr}\n{result.stdout}")
         return False
 
-    print("✅  Frontend build succeeded.\n")
+    print("[OK]  Frontend build succeeded.\n")
     return True
 
 
@@ -99,17 +99,17 @@ def main():
     if not args.skip_build:
         ok = build_frontend(force=args.rebuild)
         if not ok:
-            print("\n⚠️  Continuing without frontend build. API will still be available.")
+            print("\n[WARN]  Continuing without frontend build. API will still be available.")
     else:
-        print("⏭️  Skipping frontend build (--skip-build flag set).\n")
+        print("[SKIP]  Skipping frontend build (--skip-build flag set).\n")
 
     dist_exists = os.path.exists(FRONTEND_DIST)
-    print("🚀  Starting RetailPulse AI server...\n")
+    print("[START]  Starting RetailPulse AI server...\n")
     if dist_exists:
-        print(f"   🌐  Dashboard  →  http://localhost:{args.port}/")
-    print(f"   📋  API Docs   →  http://localhost:{args.port}/docs")
-    print(f"   📄  ReDoc      →  http://localhost:{args.port}/redoc")
-    print(f"   🔌  API Base   →  http://localhost:{args.port}/api/")
+        print(f"   [DASH]  Dashboard  ->  http://localhost:{args.port}/")
+    print(f"   [DOCS]  API Docs   ->  http://localhost:{args.port}/docs")
+    print(f"   [REDOC] ReDoc      ->  http://localhost:{args.port}/redoc")
+    print(f"   [API]   API Base   ->  http://localhost:{args.port}/api/")
     print()
 
     uvicorn.run(
